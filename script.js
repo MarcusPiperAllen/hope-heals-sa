@@ -107,10 +107,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: formData.get('name'),
                 email: formData.get('email'),
                 amount: formData.get('amount'),
-                message: formData.get('message')
+                message: formData.get('message'),
+                timestamp: new Date().toISOString(),
+                source: 'HOPE Heals SA Pledge Form'
             };
             
-            console.log('Pledge submitted:', data);
+            console.log('='.repeat(50));
+            console.log('NEW LEAD CAPTURED - HOPE Heals SA');
+            console.log('='.repeat(50));
+            console.log('Name:', data.name);
+            console.log('Email:', data.email);
+            console.log('Pledge Amount: $' + data.amount);
+            console.log('Message:', data.message || '(none)');
+            console.log('Timestamp:', data.timestamp);
+            console.log('='.repeat(50));
+            console.log('Full Lead Data:', JSON.stringify(data, null, 2));
+            console.log('='.repeat(50));
             
             showThankYouModal();
             this.reset();

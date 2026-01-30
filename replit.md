@@ -76,14 +76,29 @@ SA Hope Center, All Wellness Center, First Presbyterian Church, Broken Warriors 
 **DO NOT**: Claim to be a housing provider
 
 ## Technical Details
-- QR Code: Generated via qrcode.js CDN library
+- QR Code: Static image at `assets/images/qr-get-involved.png` (placeholder URL)
 - Thank You Modal: CSS-animated popup with heart icon
+- Pledge Form: Logs all lead data to browser console for demo purposes
 - All images have descriptive alt text for accessibility
 - SEO optimized metadata for "San Antonio Nonprofit Coalition"
 
 ## Running the Project
 Static files served via Python HTTP server on port 5000.
 
+## How to Update QR Code When Domain is Ready
+When you purchase hopehealssa.org, run this command in the Shell to regenerate the QR code:
+```bash
+qrencode -o assets/images/qr-get-involved.png -s 10 -m 2 --foreground=1a365d --background=ffffff "https://hopehealssa.org/#involved"
+```
+
+## Demo: Viewing Lead Captures
+To see pledge form submissions during a demo:
+1. Open the website in a browser
+2. Open Developer Tools (F12 or Cmd+Option+I)
+3. Go to the Console tab
+4. Submit a pledge - you'll see full lead data logged with timestamp
+
 ## Future Enhancements
 - Connect pledge form to email collection service (Mailchimp, etc.)
 - Add payment processing when bank account is ready (Stripe integration)
+- Update QR code with final domain URL
