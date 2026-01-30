@@ -68,11 +68,19 @@ body {
 }
 
 .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     font-family: var(--font-heading);
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--color-navy);
     text-decoration: none;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
 }
 
 .logo-hope {
@@ -234,6 +242,19 @@ body {
     padding: 0 1.5rem;
 }
 
+.hero-acronym {
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.9;
+    margin-bottom: 1rem;
+}
+
+.hero-acronym strong {
+    color: var(--color-accent);
+    font-size: 1.3em;
+}
+
 .hero-title {
     font-family: var(--font-heading);
     font-size: clamp(2rem, 5vw, 3.5rem);
@@ -332,6 +353,26 @@ body {
 
 .story-text p {
     margin-bottom: 1.5rem;
+    color: var(--color-slate-dark);
+}
+
+.founder-section {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--color-white);
+    border-radius: 12px;
+    border-left: 4px solid var(--color-accent);
+}
+
+.founder-section h3 {
+    font-family: var(--font-heading);
+    color: var(--color-navy);
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.founder-section p {
+    margin-bottom: 0;
     color: var(--color-slate-dark);
 }
 
@@ -449,6 +490,32 @@ body {
     aspect-ratio: 4/3;
     border-radius: 12px;
     overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-lg);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.gallery-item-logo {
+    background: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.gallery-item-logo img {
+    object-fit: contain;
 }
 
 .gallery-placeholder {
@@ -722,6 +789,16 @@ body {
     opacity: 0.8;
     font-size: 0.95rem;
     max-width: 300px;
+    margin-bottom: 0.5rem;
+}
+
+.hope-definition {
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+}
+
+.hope-definition strong {
+    color: var(--color-accent);
 }
 
 .footer-links h4 {
