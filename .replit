@@ -4,7 +4,7 @@ expertMode = true
 
 [nix]
 channel = "stable-25_05"
-packages = ["unzip", "imagemagick", "libheif"]
+packages = ["unzip", "imagemagick", "libheif", "qrencode"]
 
 [workflows]
 runButton = "Project"

@@ -4,23 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
 
-    const qrContainer = document.getElementById('qr-code');
-    if (qrContainer && typeof QRCode !== 'undefined') {
-        const currentUrl = window.location.href.split('#')[0] + '#involved';
-        QRCode.toCanvas(document.createElement('canvas'), currentUrl, {
-            width: 150,
-            margin: 2,
-            color: {
-                dark: '#1a365d',
-                light: '#ffffff'
-            }
-        }, function(error, canvas) {
-            if (!error) {
-                qrContainer.appendChild(canvas);
-            }
-        });
-    }
-
     window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
