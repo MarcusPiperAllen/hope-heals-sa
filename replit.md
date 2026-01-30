@@ -69,11 +69,25 @@ A professional, mobile-first website for HOPE Heals San Antonio, a coalition of 
 4. **Education**: Success stories, financial literacy, public awareness
 
 ## Key Partners
-SA Hope Center, All Wellness Center, First Presbyterian Church, Broken Warriors Angels, Life Restored, Mental Health Department, KRL Staff, STCH Ministries
+SA Hope Center, All Wellness Center, First Presbyterian Church, Broken Warriors Angels, Life Restored, Mental Health Professionals, STCH Ministries
 
-## Language Guidelines
-**DO USE**: Capacity Building, Supportive Services, Advocacy, Community Training, Lived Experience
-**DO NOT**: Claim to be a housing provider
+## Brand Voice Guidelines
+**DO USE**: 
+- "Firsthand experience" (not "lived experiences")
+- "Relationship-centered approach"
+- "Non-confrontational street outreach"
+- "Neighbors" (warm, human language)
+- Capacity Building, Supportive Services, Advocacy, Community Training
+
+**DO NOT**: 
+- Claim to be a housing provider
+- Use overly academic or policy language
+
+## Program Areas (01-04)
+1. **Immediate Outreach** - Mental/physical well-being, brain injury support
+2. **Intervention** - Non-confrontational street outreach, compassionate case management
+3. **Systems Advocacy** - Mental health awareness, streamlining ID recovery
+4. **Building a Narrative of Change** - Success stories, youth financial literacy
 
 ## Technical Details
 - QR Code: Static image at `assets/images/qr-get-involved.png` (placeholder URL)

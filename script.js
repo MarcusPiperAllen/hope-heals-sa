@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </svg>
                 </div>
                 <h3>Thank You!</h3>
-                <p>Thank you for your commitment to HOPE Heals San Antonio. We will reach out to you soon regarding the next steps for your contribution.</p>
+                <p>Your generosity means the world to us. Together, we're building a more compassionate San Antonio—one relationship at a time. We'll be in touch soon to share how your support is making a difference.</p>
                 <button class="btn btn-primary" onclick="this.closest('.thank-you-modal').remove()">Close</button>
             </div>
         `;
