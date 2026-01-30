@@ -4,6 +4,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
 
+    const qrContainer = document.getElementById('qr-code');
+    if (qrContainer && typeof QRCode !== 'undefined') {
+        const currentUrl = window.location.href.split('#')[0] + '#involved';
+        QRCode.toCanvas(document.createElement('canvas'), currentUrl, {
+            width: 150,
+            margin: 2,
+            color: {
+                dark: '#1a365d',
+                light: '#ffffff'
+            }
+        }, function(error, canvas) {
+            if (!error) {
+                qrContainer.appendChild(canvas);
+            }
+        });
+    }
+
     window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
@@ -111,10 +128,34 @@ document.addEventListener('DOMContentLoaded', function() {
             
             console.log('Pledge submitted:', data);
             
-            showToast('Thank you for your pledge! We will contact you soon.');
+            showThankYouModal();
             this.reset();
             amountBtns.forEach(b => b.classList.remove('active'));
         });
+    }
+
+    function showThankYouModal() {
+        const existingModal = document.getElementById('thank-you-modal');
+        if (existingModal) existingModal.remove();
+
+        const modal = document.createElement('div');
+        modal.id = 'thank-you-modal';
+        modal.className = 'thank-you-modal';
+        modal.innerHTML = `
+            <div class="thank-you-content">
+                <div class="thank-you-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                    </svg>
+                </div>
+                <h3>Thank You!</h3>
+                <p>Thank you for your commitment to HOPE Heals San Antonio. We will reach out to you soon regarding the next steps for your contribution.</p>
+                <button class="btn btn-primary" onclick="this.closest('.thank-you-modal').remove()">Close</button>
+            </div>
+        `;
+        document.body.appendChild(modal);
+        
+        setTimeout(() => modal.classList.add('show'), 10);
     }
 
     const contactForm = document.getElementById('contact-form');

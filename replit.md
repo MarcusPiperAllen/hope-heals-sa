@@ -8,12 +8,13 @@ A professional, mobile-first website for HOPE Heals San Antonio, a coalition of 
 /
 ├── index.html          # Main HTML file with all sections
 ├── style.css           # Responsive CSS with mobile-first design
-├── script.js           # JavaScript for interactivity
+├── script.js           # JavaScript for interactivity, QR code, forms
 ├── assets/
-│   └── images/         # Image assets (18 unique photos)
+│   └── images/         # Image assets (18 unique photos - all utilized)
 │       ├── hope-heals-sa-logo.png           # Main logo with text
 │       ├── hope-heals-sa-icon.png           # Icon-only logo (favicon)
 │       ├── hope-heals-sa-logo-alt.jpg       # Alternative logo
+│       ├── hope-heals-sa-doodle-logo.png    # Creative doodle logo
 │       ├── hope-heals-sa-coalition-meeting.jpg
 │       ├── hope-heals-sa-coalition-group.jpg
 │       ├── hope-heals-sa-team-photo.jpg
@@ -39,30 +40,27 @@ A professional, mobile-first website for HOPE Heals San Antonio, a coalition of 
 - **Aesthetic**: Faith & Community - authoritative, modern, compassionate
 - **Favicon**: Icon-only version of hands/heart logo
 
-## Mission Statement
-"We are a coalition of persons with lived experience of homelessness committed to enhancing our community by building the foundations necessary to support those working to permanently transition out of homelessness."
+## Key Features
+- **Functional QR Code**: Dynamically generated using qrcode.js, links to #involved section
+- **Thank You Modal**: Clean popup with exact message: "Thank you for your commitment to HOPE Heals San Antonio. We will reach out to you soon regarding the next steps for your contribution."
+- **16-Image Gallery**: Responsive grid with 6 captioned images, all 18 assets utilized across site
+- **Mobile-First Design**: 2 cols mobile, 3 cols tablet, 4 cols desktop
 
 ## Site Sections
 1. **Home**: Hero with HOPE acronym, impact counter, and CTA
 2. **Our Story**: Logo featured prominently, mission, aim, values, and leadership
 3. **The Coalition**: Four pillars - Immediate Outreach, Intervention, Advocacy, Education
-4. **Impact Gallery**: 12 unique photos in responsive grid with captions
-5. **Get Involved**: Donors, Volunteers, Partners + Pledge form
+4. **Impact Gallery**: 16 unique photos in responsive grid with captions
+5. **Get Involved**: Donors, Volunteers, Partners + Pledge form with QR code
 6. **Contact**: Contact form with Google Workspace-ready footer
 
-## Gallery Images with Captions
+## Gallery Images with Captions (First 6)
 1. Coalition Meeting
 2. Community Dinner at First Pres
 3. Lived Experience Leadership (Donell)
 4. MHM Convening
 5. Coalition Team
 6. Street Outreach
-7. MLK Event
-8. Team Planning
-9. Case Management
-10. First Presbyterian Event
-11. Driver Diagram Planning
-12. Strategic Whiteboard Session
 
 ## Driver Diagram Pillars
 1. **Immediate Outreach**: Connect individuals to mental and physical resources
@@ -78,17 +76,14 @@ SA Hope Center, All Wellness Center, First Presbyterian Church, Broken Warriors 
 **DO NOT**: Claim to be a housing provider
 
 ## Technical Details
-- Mobile-first responsive design (2 cols mobile, 3 cols tablet, 4 cols desktop)
-- Sticky navigation with prominent DONATE button
-- Animated impact counters
+- QR Code: Generated via qrcode.js CDN library
+- Thank You Modal: CSS-animated popup with heart icon
 - All images have descriptive alt text for accessibility
 - SEO optimized metadata for "San Antonio Nonprofit Coalition"
-- Favicon using icon-only logo version
 
 ## Running the Project
 Static files served via Python HTTP server on port 5000.
 
 ## Future Enhancements
-- Connect pledge form to email collection service
-- Add payment processing when bank account is ready
-- Generate functional QR code pointing to Get Involved page
+- Connect pledge form to email collection service (Mailchimp, etc.)
+- Add payment processing when bank account is ready (Stripe integration)

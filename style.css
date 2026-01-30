@@ -889,6 +889,70 @@ body {
     visibility: visible;
 }
 
+.thank-you-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    padding: 1rem;
+}
+
+.thank-you-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.thank-you-content {
+    background: var(--color-white);
+    padding: 2.5rem;
+    border-radius: 16px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    transform: scale(0.9);
+    transition: var(--transition);
+}
+
+.thank-you-modal.show .thank-you-content {
+    transform: scale(1);
+}
+
+.thank-you-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--color-accent), #e57373);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.thank-you-icon svg {
+    width: 30px;
+    height: 30px;
+    stroke: var(--color-white);
+}
+
+.thank-you-content h3 {
+    font-family: var(--font-heading);
+    color: var(--color-navy);
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.thank-you-content p {
+    color: var(--color-slate-dark);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
 @media (min-width: 640px) {
     .hero-buttons {
         flex-direction: row;
