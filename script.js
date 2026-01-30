@@ -56,12 +56,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 const easeOut = 1 - Math.pow(1 - progress, 3);
                 const currentValue = Math.floor(startValue + (target - startValue) * easeOut);
                 
-                counter.textContent = currentValue.toLocaleString();
+                const isYear = counter.classList.contains('counter-year');
+                counter.textContent = isYear ? currentValue : currentValue.toLocaleString();
                 
                 if (progress < 1) {
                     requestAnimationFrame(updateCounter);
                 } else {
-                    counter.textContent = target.toLocaleString();
+                    counter.textContent = isYear ? target : target.toLocaleString();
                 }
             }
             
