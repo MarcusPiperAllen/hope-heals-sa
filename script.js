@@ -103,26 +103,23 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             
             const formData = new FormData(this);
-            const data = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                amount: formData.get('amount'),
-                message: formData.get('message'),
-                timestamp: new Date().toISOString(),
-                source: 'HOPE Heals SA Pledge Form'
-            };
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const amount = formData.get('amount');
+            const message = formData.get('message');
             
-            console.log('='.repeat(50));
-            console.log('NEW LEAD CAPTURED - HOPE Heals SA');
-            console.log('='.repeat(50));
-            console.log('Name:', data.name);
-            console.log('Email:', data.email);
-            console.log('Pledge Amount: $' + data.amount);
-            console.log('Message:', data.message || '(none)');
-            console.log('Timestamp:', data.timestamp);
-            console.log('='.repeat(50));
-            console.log('Full Lead Data:', JSON.stringify(data, null, 2));
-            console.log('='.repeat(50));
+            const subject = encodeURIComponent('New Pledge for HOPE Heals');
+            const body = encodeURIComponent(
+`New Pledge Submission
+
+Name: ${name}
+Email: ${email}
+Pledge Amount: $${amount}
+${message ? `Message: ${message}` : ''}`
+            );
+            
+            const mailtoLink = `mailto:hopehealssanantonio@gmail.com?subject=${subject}&body=${body}`;
+            window.location.href = mailtoLink;
             
             showThankYouModal();
             this.reset();
@@ -145,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </svg>
                 </div>
                 <h3>Thank You!</h3>
-                <p>Your generosity means the world to us. Together, we're building a more compassionate San Antonio—one relationship at a time. We'll be in touch soon to share how your support is making a difference.</p>
+                <p>Thank you for your pledge. A confirmation email is ready to send. Please click "Send" in your email app to complete your pledge submission.</p>
                 <button class="btn btn-primary" onclick="this.closest('.thank-you-modal').remove()">Close</button>
             </div>
         `;
