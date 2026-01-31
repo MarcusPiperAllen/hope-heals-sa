@@ -498,7 +498,7 @@ body {
     gap: 1rem;
 }
 
-.gallery-grid.gallery-12 {
+.gallery-grid.gallery-10 {
     grid-template-columns: repeat(2, 1fr);
 }
 
@@ -971,8 +971,8 @@ body {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .gallery-grid.gallery-12 {
-        grid-template-columns: repeat(3, 1fr);
+    .gallery-grid.gallery-10 {
+        grid-template-columns: repeat(5, 1fr);
     }
 
     .gallery-grid.gallery-8 {
@@ -1042,8 +1042,8 @@ body {
         padding: 6rem 0;
     }
 
-    .gallery-grid.gallery-12 {
-        grid-template-columns: repeat(4, 1fr);
+    .gallery-grid.gallery-10 {
+        grid-template-columns: repeat(5, 1fr);
     }
 
     .gallery-grid.gallery-8 {
