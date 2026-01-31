@@ -32,3 +32,8 @@ npm-debug.log*
 # Build outputs
 dist/
 build/
+
+# Ignore raw uploads / large media
+*.zip
+*.mp4
+attached_assets/
