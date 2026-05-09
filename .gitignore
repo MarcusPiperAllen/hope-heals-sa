@@ -37,3 +37,6 @@ build/
 *.zip
 *.mp4
 attached_assets/
+Invoices/
+*.pdf
+*.docx
