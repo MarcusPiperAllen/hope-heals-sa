@@ -1,7 +1,8 @@
 :root {
-    --color-navy: #1a365d;
-    --color-navy-dark: #0f2442;
-    --color-navy-light: #2c5282;
+    /* ===== OFFICIAL HOPE HEALS SA BRAND COLORS ===== */
+    --color-navy: #800000;          /* Brand Maroon — replaces navy for headings & structural */
+    --color-navy-dark: #000000;     /* Brand Black — darkest backgrounds (footer, etc.) */
+    --color-navy-light: #a00000;    /* Lighter maroon for hover states */
     --color-slate: #64748b;
     --color-slate-light: #94a3b8;
     --color-slate-dark: #475569;
@@ -9,9 +10,10 @@
     --color-off-white: #f8fafc;
     --color-gray-100: #f1f5f9;
     --color-gray-200: #e2e8f0;
-    --color-accent: #3b82f6;
-    --color-accent-dark: #2563eb;
-    --font-heading: 'Merriweather', Georgia, serif;
+    --color-accent: #00FFFF;        /* Brand Primary Cyan/Aqua */
+    --color-accent-dark: #5ecfea;   /* Brand Reference Cyan — darker tint for hover */
+    --color-accent-muted: rgba(0, 255, 255, 0.15); /* Transparent cyan for backgrounds */
+    --font-heading: 'Cinzel Decorative', 'Cinzel', Georgia, serif;
     --font-body: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -199,7 +201,7 @@ body {
 
 .btn-secondary:hover {
     background: var(--color-white);
-    color: var(--color-navy);
+    color: var(--color-navy); /* maroon text on white hover */
 }
 
 .btn-outline {
@@ -231,7 +233,7 @@ body {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(26, 54, 93, 0.85) 0%, rgba(30, 64, 110, 0.8) 50%, rgba(42, 82, 138, 0.75) 100%);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.88) 0%, rgba(128, 0, 0, 0.78) 55%, rgba(0, 0, 0, 0.82) 100%);
 }
 
 .hero-content {
@@ -716,7 +718,8 @@ body {
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--color-accent);
+    border-color: var(--color-accent); /* cyan focus ring */
+    box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.18);
 }
 
 .amount-options {
@@ -931,7 +934,7 @@ body {
 .thank-you-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, var(--color-accent), #e57373);
+    background: linear-gradient(135deg, var(--color-accent), var(--color-navy));
     border-radius: 50%;
     display: flex;
     align-items: center;
