@@ -352,6 +352,10 @@ body {
     height: auto;
     margin: 0 auto;
     display: block;
+    border-radius: 12px;
+    background: transparent;
+    mix-blend-mode: multiply;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.10));
 }
 
 .story-content {
@@ -369,6 +373,21 @@ body {
 .story-text p {
     margin-bottom: 1.5rem;
     color: var(--color-slate-dark);
+}
+
+.story-org-name {
+    font-family: var(--font-heading);
+    color: var(--color-navy);
+    font-size: 1.5rem;
+    margin-bottom: 0.35rem;
+}
+
+.story-org-sub {
+    font-size: 0.9rem !important;
+    color: var(--color-slate) !important;
+    font-style: italic;
+    margin-bottom: 1rem !important;
+    opacity: 0.85;
 }
 
 .founder-section {
@@ -1099,7 +1118,7 @@ body {
     }
 
     .story-values {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .coalition-pillars {
@@ -1145,6 +1164,10 @@ body {
     .story-content {
         grid-template-columns: 1.2fr 1fr;
         align-items: start;
+    }
+
+    .story-values {
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .pledge-section {
