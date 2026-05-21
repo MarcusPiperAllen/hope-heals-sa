@@ -66,7 +66,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
+    height: 80px;
 }
 
 .nav-logo {
@@ -78,10 +78,11 @@ body {
     font-weight: 700;
     color: var(--color-navy);
     text-decoration: none;
+    margin-right: 2.5rem;
 }
 
 .logo-img {
-    height: 40px;
+    height: 56px;
     width: auto;
 }
 
@@ -120,7 +121,7 @@ body {
 
 .nav-menu {
     position: fixed;
-    top: 70px;
+    top: 80px;
     left: 0;
     right: 0;
     background: var(--color-white);
@@ -959,6 +960,90 @@ body {
     color: var(--color-slate-dark);
     margin-bottom: 1.5rem;
     line-height: 1.6;
+}
+
+/* ===== SERVICES DROPDOWN ===== */
+.nav-item-dropdown {
+    position: relative;
+}
+
+.nav-link-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.dropdown-arrow {
+    font-size: 0.65em;
+    transition: transform 0.25s ease;
+    display: inline-block;
+    margin-top: 1px;
+}
+
+.nav-item-dropdown:hover .dropdown-arrow,
+.nav-item-dropdown:focus-within .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    min-width: 200px;
+    background: var(--color-white);
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+    list-style: none;
+    padding: 0.5rem 0;
+    z-index: 1100;
+    border-top: 3px solid var(--color-accent);
+}
+
+.nav-item-dropdown:hover .dropdown-menu,
+.nav-item-dropdown:focus-within .dropdown-menu {
+    display: block;
+}
+
+.dropdown-link {
+    display: block;
+    padding: 0.6rem 1.25rem;
+    color: var(--color-slate-dark);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: var(--transition);
+}
+
+.dropdown-link:hover {
+    background: var(--color-gray-100);
+    color: var(--color-navy);
+}
+
+/* Mobile: dropdown items shown inline below Services */
+@media (max-width: 767px) {
+    .nav-item-dropdown .dropdown-menu {
+        position: static;
+        display: block;
+        box-shadow: none;
+        border-radius: 0;
+        border-top: none;
+        border-left: 3px solid var(--color-accent);
+        padding: 0.25rem 0 0.25rem 1rem;
+        margin-top: 0.25rem;
+        background: var(--color-gray-100);
+    }
+
+    .dropdown-link {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .dropdown-arrow {
+        display: none;
+    }
 }
 
 @media (min-width: 640px) {
