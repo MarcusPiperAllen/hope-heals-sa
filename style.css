@@ -868,6 +868,36 @@ body {
     box-shadow: var(--shadow-md);
 }
 
+.contact-direct-note {
+    margin: 0 0 1.25rem;
+    padding: 0.75rem 1rem;
+    background: var(--color-bg-light, #f1f5f9);
+    border-left: 3px solid var(--color-accent, #1a365d);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: var(--color-slate, #64748b);
+}
+
+.contact-direct-note a {
+    color: var(--color-navy, #1a365d);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.contact-form-status {
+    margin: 1rem 0 0;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    background: #eef2f7;
+    color: #1a365d;
+}
+
+.contact-form-status.is-error {
+    background: #fdecec;
+    color: #9b1c1c;
+}
+
 .footer {
     background: var(--color-navy-dark);
     color: var(--color-white);

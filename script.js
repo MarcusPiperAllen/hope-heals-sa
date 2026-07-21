@@ -153,21 +153,50 @@ ${message ? `Message: ${message}` : ''}`
 
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
+        const CONTACT_EMAIL = 'hopehealssanantonio@gmail.com';
+        const statusEl = document.getElementById('contact-form-status');
+
+        const setStatus = (message, isError) => {
+            if (!statusEl) return;
+            statusEl.textContent = message;
+            statusEl.hidden = false;
+            statusEl.classList.toggle('is-error', !!isError);
+        };
+
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
             const formData = new FormData(this);
-            const data = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                subject: formData.get('subject'),
-                message: formData.get('message')
-            };
-            
-            console.log('Contact form submitted:', data);
-            
-            showToast('Thank you for your message! We will get back to you soon.');
-            this.reset();
+            const name = (formData.get('name') || '').toString().trim();
+            const email = (formData.get('email') || '').toString().trim();
+            const subjectValue = (formData.get('subject') || '').toString();
+            const message = (formData.get('message') || '').toString().trim();
+
+            const subjectSelect = document.getElementById('contact-subject');
+            const subjectLabel = subjectSelect && subjectSelect.selectedIndex >= 0
+                ? subjectSelect.options[subjectSelect.selectedIndex].text
+                : subjectValue;
+
+            const subject = `[HHSA Contact] ${subjectLabel}`;
+            const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n`;
+
+            const mailtoLink = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            setStatus(`Opening your email app to send this message to ${CONTACT_EMAIL}. If nothing opens, please email us directly at ${CONTACT_EMAIL}.`, false);
+
+            let opened = true;
+            try {
+                const newWin = window.open(mailtoLink, '_self');
+                if (newWin === null) {
+                    opened = false;
+                }
+            } catch (err) {
+                opened = false;
+            }
+
+            if (!opened) {
+                setStatus(`We couldn't open your email app automatically. Please email your message directly to ${CONTACT_EMAIL}.`, true);
+            }
         });
     }
 
