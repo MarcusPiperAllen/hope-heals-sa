@@ -676,6 +676,38 @@ body {
     margin-bottom: 2rem;
 }
 
+.giving-methods {
+    margin-bottom: 2rem;
+}
+
+.giving-method {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    padding: 1.25rem;
+}
+
+.giving-method-label {
+    display: block;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.giving-method-value {
+    display: block;
+    font-size: 1.125rem;
+    font-weight: 600;
+    word-break: break-word;
+    margin-bottom: 0.5rem;
+}
+
+.giving-method-note {
+    font-size: 0.875rem;
+    opacity: 0.8;
+    margin-bottom: 0 !important;
+}
+
 .qr-placeholder {
     text-align: center;
 }
