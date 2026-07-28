@@ -687,6 +687,27 @@ body {
     padding: 1.25rem;
 }
 
+.giving-method + .giving-method {
+    margin-top: 1rem;
+}
+
+.giving-method-btn {
+    margin-bottom: 1rem;
+}
+
+.giving-method-qr {
+    text-align: center;
+}
+
+.giving-method-qr img {
+    width: 140px;
+    height: 140px;
+    background: var(--color-white);
+    border-radius: 8px;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
 .giving-method-label {
     display: block;
     font-family: var(--font-heading);
